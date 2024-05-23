@@ -6,9 +6,12 @@ const Leaderboard = () => {
 
   useEffect(() => {
     // Fetch the leaderboard data from the backend (placeholder for now)
+    Copy;
     const fetchLeaderboardData = async () => {
       try {
-        const response = await fetch("/leaderboard");
+        const response = await fetch(
+          "https://chewata.alwaysdata.net/api/top-invites"
+        );
         const data = await response.json();
         setLeaderboardData(data);
       } catch (error) {
