@@ -9,7 +9,9 @@ const Leaderboard = () => {
   useEffect(() => {
     const fetchLeaderboardData = async () => {
       try {
-        const response = await fetch("https://chewata.alwaysdata.net/api");
+        const response = await fetch(
+          "https://chewata.alwaysdata.net/leaderboard"
+        );
         if (!response.ok) {
           throw new Error("Failed to fetch leaderboard data");
         }
@@ -35,16 +37,20 @@ const Leaderboard = () => {
             <thead>
               <tr>
                 <th scope="col">#</th>
+                <th scope="col">User ID</th>
                 <th scope="col">Username</th>
+                <th scope="col">Name</th>
                 <th scope="col">Invite Count</th>
               </tr>
             </thead>
             <tbody>
               {leaderboardData.map((user, index) => (
-                <tr key={index}>
+                <tr key={user.user_id}>
                   <th scope="row">{index + 1}</th>
+                  <td>{user.user_id}</td>
                   <td>{user.username}</td>
-                  <td>{user.inviteCount}</td>
+                  <td>{user.name}</td>
+                  <td>{user.invite_count}</td>
                 </tr>
               ))}
             </tbody>
