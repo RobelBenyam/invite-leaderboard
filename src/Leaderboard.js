@@ -9,7 +9,9 @@ const Leaderboard = () => {
   useEffect(() => {
     const fetchLeaderboardData = async () => {
       try {
-        const response = await fetch("https://chewata.alwaysdata.net/api/");
+        const response = await fetch(
+          "https://chewata.alwaysdata.net/leaderboard"
+        );
         if (!response.ok) {
           throw new Error("Failed to fetch leaderboard data");
         }
