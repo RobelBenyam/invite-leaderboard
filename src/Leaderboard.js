@@ -37,7 +37,6 @@ const Leaderboard = () => {
             <thead>
               <tr>
                 <th scope="col">#</th>
-                <th scope="col">User ID</th>
                 <th scope="col">Username</th>
                 <th scope="col">Name</th>
                 <th scope="col">Invite Count</th>
@@ -45,9 +44,8 @@ const Leaderboard = () => {
             </thead>
             <tbody>
               {leaderboardData.map((user, index) => (
-                <tr key={user.user_id}>
+                <tr key={index}>
                   <th scope="row">{index + 1}</th>
-                  <td>{user.user_id}</td>
                   <td>{user.username}</td>
                   <td>{user.name}</td>
                   <td>{user.invite_count}</td>
