@@ -38,28 +38,45 @@ const Leaderboard = () => {
           {error ? (
             <div className="error-message">{error}</div>
           ) : (
-            <table className="leaderboard-table">
-              <thead>
-                <tr>
-                  <th scope="col">#</th>
-                  <th scope="col">Username</th>
-                  <th scope="col">Name</th>
-                  <th scope="col">Invite Count</th>
-                </tr>
-              </thead>
-              <tbody>
-                {leaderboardData.map((user, index) => (
-                  <tr key={index}>
-                    <th scope="row" className={`ranking rank-${index + 1}`}>
-                      {index + 1}
-                    </th>
-                    <td>{user.username}</td>
-                    <td>{user.name}</td>
-                    <td>{user.invite_count}</td>
-                  </tr>
-                ))}
-              </tbody>
-            </table>
+            <div>
+              <h1 className="leaderboard-title">Invite Leaderboard</h1>
+              <div className="leaderboard-content">
+                <div className="leaderboard-cards">
+                  {leaderboardData.slice(0, 3).map((user, index) => (
+                    <div
+                      key={index}
+                      className={`leaderboard-card rank-${index + 1}`}
+                    >
+                      <div className="ranking">{index + 1}</div>
+                      <div className="name">{user.name}</div>
+                      <div className="invite-count">
+                        Invites sent: {user.invite_count}
+                      </div>
+                    </div>
+                  ))}
+                </div>
+                <table className="leaderboard-table">
+                  <thead>
+                    <tr>
+                      <th scope="col">#</th>
+                      <th scope="col">Username</th>
+                      <th scope="col">Name</th>
+                      <th scope="col">Invite Count</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    {leaderboardData.slice(3).map((user, index) => (
+                      <tr key={index + 3}>
+                        <td>{index + 4}</td>
+                        <td>{user.username}</td>
+                        <td>{user.name}</td>
+                        <td>{user.invite_count}</td>
+                      </tr>
+                    ))}
+                  </tbody>
+                </table>
+              </div>
+            </div>
           )}
         </div>
       )}
