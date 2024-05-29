@@ -22,3 +22,82 @@
   font-weight: bold;
   color: #ffd700;
 }
+
+/* Leaderboard.css */
+.app-container {
+  background-color: #f0f0f0;
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.loading-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+
+.leaderboard-container {
+  width: 80%;
+  max-width: 800px;
+}
+
+.leaderboard-table {
+  width: 100%;
+  background-color: #fff;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  border-collapse: collapse;
+}
+
+.leaderboard-table th,
+.leaderboard-table td {
+  padding: 12px 16px;
+  text-align: left;
+}
+
+.leaderboard-table th {
+  background-color: #f5f5f5;
+  font-weight: bold;
+}
+
+.leaderboard-table tr:nth-child(even) {
+  background-color: #f9f9f9;
+}
+
+.leaderboard-table .ranking {
+  font-weight: bold;
+  font-size: 18px;
+}
+
+.leaderboard-table .ranking.rank-1 {
+  color: #ffd700; /* Gold */
+}
+
+.leaderboard-table .ranking.rank-2 {
+  color: #c0c0c0; /* Silver */
+}
+
+.leaderboard-table .ranking.rank-3 {
+  color: #cd7f32; /* Bronze */
+}
+
+.error-message {
+  color: #dc3545;
+  font-weight: bold;
+  text-align: center;
+  margin-top: 20px;
+}
+
+@media (max-width: 768px) {
+  .leaderboard-container {
+    width: 90%;
+  }
+
+  .leaderboard-table th,
+  .leaderboard-table td {
+    padding: 10px 12px;
+  }
+}

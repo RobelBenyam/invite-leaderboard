@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from "react";
+import { ClipLoader } from "react-spinners";
 import "./Leaderboard.css";
 
 const Leaderboard = () => {
@@ -27,32 +28,39 @@ const Leaderboard = () => {
   }, []);
 
   return (
-    <div className="container my-5">
-      <h1 className="mb-4 text-center">Invite Leaderboard</h1>
-      {loading && <p>Loading...</p>}
-      {error && <p>Error: {error}</p>}
-      {!loading && !error && (
-        <div className="table-responsive">
-          <table className="leaderboard-table table-hover">
-            <thead>
-              <tr>
-                <th scope="col">#</th>
-                <th scope="col">Username</th>
-                <th scope="col">Name</th>
-                <th scope="col">Invite Count</th>
-              </tr>
-            </thead>
-            <tbody>
-              {leaderboardData.map((user, index) => (
-                <tr key={index}>
-                  <th scope="row">{index + 1}</th>
-                  <td>{user.username}</td>
-                  <td>{user.name}</td>
-                  <td>{user.invite_count}</td>
+    <div className="app-container">
+      {loading ? (
+        <div className="loading-container">
+          <ClipLoader color="#36d7b7" size={50} />
+        </div>
+      ) : (
+        <div className="leaderboard-container">
+          {error ? (
+            <div className="error-message">{error}</div>
+          ) : (
+            <table className="leaderboard-table">
+              <thead>
+                <tr>
+                  <th scope="col">#</th>
+                  <th scope="col">Username</th>
+                  <th scope="col">Name</th>
+                  <th scope="col">Invite Count</th>
                 </tr>
-              ))}
-            </tbody>
-          </table>
+              </thead>
+              <tbody>
+                {leaderboardData.map((user, index) => (
+                  <tr key={index}>
+                    <th scope="row" className={`ranking rank-${index + 1}`}>
+                      {index + 1}
+                    </th>
+                    <td>{user.username}</td>
+                    <td>{user.name}</td>
+                    <td>{user.invite_count}</td>
+                  </tr>
+                ))}
+              </tbody>
+            </table>
+          )}
         </div>
       )}
     </div>
