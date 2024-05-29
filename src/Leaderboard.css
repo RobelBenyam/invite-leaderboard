@@ -128,6 +128,12 @@
   color: #ffd700; /* Gold */
 }
 
+.leaderboard-table tbody td.rank::before {
+  content: "#";
+  font-weight: bold;
+  margin-right: 4px;
+}
+
 .error-message {
   color: #dc3545;
   font-weight: bold;
@@ -165,6 +171,12 @@
   .leaderboard-table tbody td {
     display: table-cell; /* Display table cells as default */
     padding: 10px 12px; /* Reduce vertical padding for smaller screens */
+  }
+
+  .leaderboard-table tbody td.rank::before {
+    content: "#";
+    font-weight: bold;
+    margin-right: 4px;
   }
 
   .leaderboard-table tbody tr:nth-child(-n + 3) {
