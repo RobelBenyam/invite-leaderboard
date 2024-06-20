@@ -11,7 +11,7 @@ const Leaderboard = () => {
     const fetchLeaderboardData = async () => {
       try {
         const response = await fetch(
-          "https://chewata.alwaysdata.net/leaderboard"
+          "https://chewata.alwaysdata.net/bot/leaderboard"
         );
         if (!response.ok) {
           throw new Error("Failed to fetch leaderboard data");
@@ -48,9 +48,9 @@ const Leaderboard = () => {
                       className={`leaderboard-card rank-${index + 1}`}
                     >
                       <div className="ranking">{index + 1}</div>
-                      <div className="name">{user.name}</div>
+                      <div className="name">{user.full_name}</div>
                       <div className="invite-count">
-                        Invites sent: {user.invite_count}
+                        Invites sent: {user.referral_count}
                       </div>
                     </div>
                   ))}
@@ -69,8 +69,8 @@ const Leaderboard = () => {
                       <tr key={index + 3}>
                         <td>{index + 4}</td>
                         <td>{user.username}</td>
-                        <td>{user.name}</td>
-                        <td>{user.invite_count}</td>
+                        <td>{user.full_name}</td>
+                        <td>{user.referral_count}</td>
                       </tr>
                     ))}
                   </tbody>
