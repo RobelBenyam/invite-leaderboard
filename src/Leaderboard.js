@@ -11,7 +11,7 @@ const Leaderboard = () => {
     const fetchLeaderboardData = async () => {
       try {
         const response = await fetch(
-          "https://chewata.alwaysdata.net/bot/leaderboard"
+          "https://chewata-invite-board-api.vercel.app/users"
         );
         if (!response.ok) {
           throw new Error("Failed to fetch leaderboard data");
