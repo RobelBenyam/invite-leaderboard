@@ -14,11 +14,14 @@ const Leaderboard = () => {
           "https://chewata-invite-board-api.vercel.app/users"
         );
         if (!response.ok) {
-          console.log("not okey")
           throw new Error("Failed to fetch leaderboard data");
         }
         const data = await response.json();
-        setLeaderboardData(data);
+        // Ensure the data is sorted by referralCount in descending order
+        const sortedData = data.sort(
+          (a, b) => b.referralCount - a.referralCount
+        );
+        setLeaderboardData(sortedData);
         setLoading(false);
       } catch (error) {
         setError(error.message);
@@ -49,9 +52,9 @@ const Leaderboard = () => {
                       className={`leaderboard-card rank-${index + 1}`}
                     >
                       <div className="ranking">{index + 1}</div>
-                      <div className="name">{user.full_name}</div>
+                      <div className="name">{user.name}</div>
                       <div className="invite-count">
-                        Invites sent: {user.referral_count}
+                        Invites sent: {user.referralCount}
                       </div>
                     </div>
                   ))}
@@ -70,8 +73,8 @@ const Leaderboard = () => {
                       <tr key={index + 3}>
                         <td>{index + 4}</td>
                         <td>{user.username}</td>
-                        <td>{user.full_name}</td>
-                        <td>{user.referral_count}</td>
+                        <td>{user.name}</td>
+                        <td>{user.referralCount}</td>
                       </tr>
                     ))}
                   </tbody>
