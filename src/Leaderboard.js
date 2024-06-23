@@ -14,6 +14,7 @@ const Leaderboard = () => {
           "https://chewata-invite-board-api.vercel.app/users"
         );
         if (!response.ok) {
+          console.log("not okey")
           throw new Error("Failed to fetch leaderboard data");
         }
         const data = await response.json();
