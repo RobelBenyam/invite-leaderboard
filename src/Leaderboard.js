@@ -63,7 +63,7 @@ const Leaderboard = () => {
                   <thead>
                     <tr>
                       <th scope="col">#</th>
-                      <th scope="col">Username</th>
+
                       <th scope="col">Name</th>
                       <th scope="col">Invite Count</th>
                     </tr>
