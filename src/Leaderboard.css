@@ -114,6 +114,15 @@ body {
   color: #ffd700;
 }
 
+.loading-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  background: linear-gradient(to bottom, #0a1931, #001d3d);
+  backdrop-filter: blur(10px);
+}
+
 @media screen and (max-width: 1024px) {
   .leaderboard-container {
     padding: 40px 20px;

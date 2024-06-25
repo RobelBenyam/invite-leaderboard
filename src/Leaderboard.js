@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import { ClipLoader } from "react-spinners";
+import { PulseLoader } from "react-spinners";
 import "./Leaderboard.css";
 
 const Leaderboard = () => {
@@ -36,7 +36,7 @@ const Leaderboard = () => {
     <div className="app-container">
       {loading ? (
         <div className="loading-container">
-          <ClipLoader color="#36d7b7" size={50} />
+          <PulseLoader color="#36d7b7" size={20} />
         </div>
       ) : (
         <div className="leaderboard-container">
