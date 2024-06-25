@@ -21,7 +21,8 @@ const Leaderboard = () => {
         const sortedData = data.sort(
           (a, b) => b.referralCount - a.referralCount
         );
-        setLeaderboardData(sortedData);
+        // Limit the data to the top 300 users
+        setLeaderboardData(sortedData.slice(0, 300));
         setLoading(false);
       } catch (error) {
         setError(error.message);
