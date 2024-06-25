@@ -72,7 +72,7 @@ const Leaderboard = () => {
                     {leaderboardData.slice(3).map((user, index) => (
                       <tr key={index + 3}>
                         <td>{index + 4}</td>
-                        <td>{user.username}</td>
+
                         <td>{user.name}</td>
                         <td>{user.referralCount}</td>
                       </tr>
