@@ -150,7 +150,7 @@ body {
   margin-top: 20px;
 }
 
-@media screen and (max-width: 768px) {
+@media screen and (max-width: 500px) {
   .leaderboard-container {
     width: 95%;
   }
@@ -173,7 +173,7 @@ body {
   }
 }
 
-@media screen and (max-width: 480px) {
+@media screen and (max-width: 300px) {
   .leaderboard-container {
     width: 100%;
     padding: 15px;
