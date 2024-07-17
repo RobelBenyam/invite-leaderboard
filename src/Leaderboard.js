@@ -52,7 +52,9 @@ const Leaderboard = () => {
                     >
                       <div className="ranking">{index + 1}</div>
                       <div className="name">{user.name || "👤"}</div>
-                      <div className="invite-count">Score : {user.score}</div>
+                      <div className="invite-count">
+                        Score : {user.score || 0}
+                      </div>
                     </div>
                   ))}
                 </div>
