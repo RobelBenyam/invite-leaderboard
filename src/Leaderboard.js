@@ -18,9 +18,7 @@ const Leaderboard = () => {
         }
         const data = await response.json();
         // Ensure the data is sorted by referralCount in descending order
-        const sortedData = data.sort(
-          (a, b) => b.referralCount - a.referralCount
-        );
+        const sortedData = data.sort((a, b) => b.score - a.score);
         // Limit the data to the top 300 users
         setLeaderboardData(sortedData.slice(0, 300));
         setLoading(false);
