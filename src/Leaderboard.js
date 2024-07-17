@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import { ClipLoader } from "react-spinners";
+import { PulseLoader } from "react-spinners";
 import "./Leaderboard.css";
 
 const Leaderboard = () => {
@@ -21,7 +21,8 @@ const Leaderboard = () => {
         const sortedData = data.sort(
           (a, b) => b.referralCount - a.referralCount
         );
-        setLeaderboardData(sortedData);
+        // Limit the data to the top 300 users
+        setLeaderboardData(sortedData.slice(0, 300));
         setLoading(false);
       } catch (error) {
         setError(error.message);
@@ -35,7 +36,7 @@ const Leaderboard = () => {
     <div className="app-container">
       {loading ? (
         <div className="loading-container">
-          <ClipLoader color="#36d7b7" size={50} />
+          <PulseLoader color="#36d7b7" size={20} />
         </div>
       ) : (
         <div className="leaderboard-container">
@@ -61,7 +62,7 @@ const Leaderboard = () => {
                   <thead>
                     <tr>
                       <th scope="col">#</th>
-                      <th scope="col">Username</th>
+
                       <th scope="col">Name</th>
                       <th scope="col">Score</th>
                     </tr>
@@ -70,7 +71,7 @@ const Leaderboard = () => {
                     {leaderboardData.slice(3).map((user, index) => (
                       <tr key={index + 3}>
                         <td>{index + 4}</td>
-                        <td>{user.username}</td>
+
                         <td>{user.name}</td>
                         <td>{user.score}</td>
                       </tr>
