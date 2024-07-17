@@ -73,7 +73,7 @@ const Leaderboard = () => {
                         <td>{index + 4}</td>
 
                         <td>{user.name || "👤"}</td>
-                        <td>{user.score}</td>
+                        <td>{user.score || 0}</td>
                       </tr>
                     ))}
                   </tbody>
