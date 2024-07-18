@@ -235,3 +235,40 @@ body {
     font-size: 11px;
   }
 }
+
+/* ................................... */
+.user-score-container {
+  background-color: #36d7b7; /* Teal background for visibility */
+  color: white; /* White text for contrast */
+  padding: 20px;
+  margin-bottom: 20px;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Soft shadow for 3D effect */
+  text-align: center; /* Center aligning the text */
+}
+
+.user-score-title {
+  margin-bottom: 10px; /* Spacing between title and score */
+  font-size: 24px; /* Larger font for the title */
+}
+
+.user-score-box {
+  display: inline-block;
+  padding: 10px 20px;
+  background: rgba(
+    255,
+    255,
+    255,
+    0.2
+  ); /* Slight white tint for the score box */
+  border-radius: 5px; /* Rounded corners for the score box */
+}
+
+.user-name {
+  font-weight: bold; /* Bold font for user name */
+  margin-right: 10px; /* Spacing between name and score */
+}
+
+.user-score {
+  font-size: 20px; /* Larger font for score */
+}
