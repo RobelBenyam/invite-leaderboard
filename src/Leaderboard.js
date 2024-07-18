@@ -64,7 +64,7 @@ const Leaderboard = () => {
             <div className="error-message">{error}</div>
           ) : (
             <div>
-              <h1 className="leaderboard-title">Score Leaderboard</h1>
+              <h1 className="leaderboard-title">Play Leaderboard</h1>
               {userData && (
                 <div className="user-score-container">
                   <h3 className="user-score-title">Your Score</h3>
