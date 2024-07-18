@@ -68,7 +68,11 @@ const Leaderboard = () => {
                 <div className="user-score-container">
                   <h3 className="user-score-title">Your Score</h3>
                   <div className="user-score-box">
-                    <span className="user-name">{userData.name}</span>
+                    <span className="user-name">
+                      {userData.name
+                        ? userData.name.replace("undefined", "")
+                        : "👤" || "👤"}
+                    </span>
                     <span className="user-score">
                       Score: {userData.score || 0}
                     </span>
@@ -83,7 +87,11 @@ const Leaderboard = () => {
                       className={`leaderboard-card rank-${index + 1}`}
                     >
                       <div className="ranking">{index + 1}</div>
-                      <div className="name">{user.name || "👤"}</div>
+                      <div className="name">
+                        {user.name
+                          ? user.name.replace("undefined", "")
+                          : "👤" || "👤"}
+                      </div>
                       <div className="score">Score: {user.score || 0}</div>
                     </div>
                   ))}
@@ -100,7 +108,11 @@ const Leaderboard = () => {
                     {leaderboardData.slice(3).map((user, index) => (
                       <tr key={index + 3}>
                         <td>{index + 4}</td>
-                        <td>{user.name || "👤"}</td>
+                        <td>
+                          {user.name
+                            ? user.name.replace("undefined", "")
+                            : "👤" || "👤"}
+                        </td>
                         <td>{user.score || 0}</td>
                       </tr>
                     ))}
