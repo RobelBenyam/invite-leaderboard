@@ -56,7 +56,7 @@ const Leaderboard = () => {
     <div className="app-container">
       {loading ? (
         <div className="loading-container">
-          <PulseLoader color="#36d7b7" size={20} />
+          <PulseLoader color="#4fc3f7" size={20} />
         </div>
       ) : (
         <div className="leaderboard-container">

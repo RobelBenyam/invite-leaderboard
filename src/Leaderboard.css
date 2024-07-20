@@ -9,8 +9,8 @@
 
 body {
   font-family: "Roboto", sans-serif;
-  background: linear-gradient(to bottom, #0a1931, #001d3d);
-  color: #fff;
+  background: linear-gradient(to bottom, #08172f, #605cc100);
+  color: #0080ff;
   font-size: 16px;
 }
 
@@ -24,6 +24,7 @@ body {
   text-align: center;
   font-size: 2.5rem;
   margin-bottom: 30px;
+  color: #415b76;
   text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
 }
 
@@ -75,20 +76,21 @@ body {
 .leaderboard-card .name {
   font-size: 1.3rem;
   margin-bottom: 10px;
-  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+  text-shadow: 2px 2px 4px rgba(122, 76, 76, 0.5);
 }
 
 .leaderboard-card .invite-count {
   font-size: 1rem;
-  color: #f2f2f2;
+  color: #3b2727;
   text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
 }
 
 .leaderboard-table {
   width: 100%;
-  background-color: rgba(255, 255, 255, 0.1);
+  color: #070816;
+  background-color: rgba(85, 70, 252, 0.1);
   border-radius: 10px;
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 4px 6px rgba(255, 159, 159, 0.1);
   overflow: hidden;
 }
 
@@ -236,39 +238,32 @@ body {
   }
 }
 
-/* ................................... */
 .user-score-container {
-  background-color: #36d7b7; /* Teal background for visibility */
-  color: white; /* White text for contrast */
+  background-color: #36d7b7;
+  color: white;
   padding: 20px;
   margin-bottom: 20px;
   border-radius: 8px;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Soft shadow for 3D effect */
-  text-align: center; /* Center aligning the text */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  text-align: center;
 }
 
 .user-score-title {
-  margin-bottom: 10px; /* Spacing between title and score */
-  font-size: 24px; /* Larger font for the title */
+  margin-bottom: 10px;
+  font-size: 24px;
 }
 
 .user-score-box {
   display: inline-block;
   padding: 10px 20px;
-  background: rgba(
-    255,
-    255,
-    255,
-    0.2
-  ); /* Slight white tint for the score box */
-  border-radius: 5px; /* Rounded corners for the score box */
+  background: rgba(255, 255, 255, 0.2);
+  border-radius: 5px;
 }
 
 .user-name {
-  font-weight: bold; /* Bold font for user name */
-  margin-right: 10px; /* Spacing between name and score */
+  font-weight: bold;
+  margin-right: 10px;
 }
-
 .user-score {
-  font-size: 20px; /* Larger font for score */
+  font-size: 20px;
 }
