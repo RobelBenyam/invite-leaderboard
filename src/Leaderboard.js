@@ -75,7 +75,7 @@ const Leaderboard = () => {
                         : "👤" || "👤"}
                     </span>
                     <span className="user-score">
-                      Score: {userData.score || 0}
+                      Score: {userData.playCount || 0}
                     </span>
                   </div>
                 </div>
@@ -93,7 +93,7 @@ const Leaderboard = () => {
                           ? user.name.replace("undefined", "")
                           : "👤" || "👤"}
                       </div>
-                      <div className="score">Score: {user.score || 0}</div>
+                      <div className="score">Score: {user.playCount || 0}</div>
                     </div>
                   ))}
                 </div>
@@ -114,7 +114,7 @@ const Leaderboard = () => {
                             ? user.name.replace("undefined", "")
                             : "👤" || "👤"}
                         </td>
-                        <td>{user.score || 0}</td>
+                        <td>{user.playCount || 0}</td>
                       </tr>
                     ))}
                   </tbody>
