@@ -20,7 +20,9 @@ const Leaderboard = () => {
           throw new Error("Failed to fetch leaderboard data");
         }
         const data = await response.json();
-        const sortedData = data.sort((a, b) => (b.score || 0) - (a.score || 0));
+        const sortedData = data.sort(
+          (a, b) => (b.playCount || 0) - (a.playCount || 0)
+        );
 
         setLeaderboardData(sortedData.slice(0, 300));
         setLoading(false);
@@ -31,7 +33,6 @@ const Leaderboard = () => {
     };
 
     // Assuming the user ID is known, e.g., from a login context
-    console.log(userId);
     fetchUserData(userId);
     fetchLeaderboardData();
   }, []);
