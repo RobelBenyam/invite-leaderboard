@@ -65,7 +65,7 @@ const Leaderboard = () => {
             <div className="error-message">{error}</div>
           ) : (
             <div>
-              <h1 className="leaderboard-title">Play Leaderboard</h1>
+              <h1 className="leaderboard-title">Referral Leaderboard</h1>
               {userData && (
                 <div className="user-score-container">
                   <h3 className="user-score-title">Your Score</h3>
@@ -76,7 +76,7 @@ const Leaderboard = () => {
                         : "👤" || "👤"}
                     </span>
                     <span className="user-score">
-                      Score: {userData.playCount || 0}
+                      Score: {userData.new_referral || 0}
                     </span>
                   </div>
                 </div>
@@ -94,7 +94,9 @@ const Leaderboard = () => {
                           ? user.name.replace("undefined", "")
                           : "👤" || "👤"}
                       </div>
-                      <div className="score">Score: {user.playCount || 0}</div>
+                      <div className="score">
+                        Score: {user.new_referral || 0}
+                      </div>
                     </div>
                   ))}
                 </div>
@@ -115,7 +117,7 @@ const Leaderboard = () => {
                             ? user.name.replace("undefined", "")
                             : "👤" || "👤"}
                         </td>
-                        <td>{user.playCount || 0}</td>
+                        <td>{user.new_referral || 0}</td>
                       </tr>
                     ))}
                   </tbody>
