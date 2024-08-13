@@ -21,7 +21,7 @@ const Leaderboard = () => {
         }
         const data = await response.json();
         const sortedData = data.sort(
-          (a, b) => (b.playCount || 0) - (a.playCount || 0)
+          (a, b) => (b.new_referral || 0) - (a.new_referral || 0)
         );
 
         setLeaderboardData(sortedData.slice(0, 300));
